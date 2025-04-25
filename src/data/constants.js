@@ -5,7 +5,7 @@ export const Bio = {
     "I am a motivated and versatile individual, always eager to take on new challenges. With a passion for learning I am dedicated to delivering high-quality results. With a positive attitude and a growth mindset, I am ready to make a meaningful contribution and achieve great things.",
   github: "https://github.com/ethersphere01",
   resume:
-    "https://drive.google.com/file/d/1txFKZD3LNIXMc329jD9c995AU8LItOXK/view?usp=drive_link",
+    "https://drive.google.com/file/d/1OeYjZ4t_Tk7Y75Qt1m5as0sS-iiaEdao/view?usp=sharing",
   linkedin: "https://www.linkedin.com/in/naimurrahman23/",
   insta: "https://www.instagram.com/naimur01012018/",
   facebook: "https://www.facebook.com/naimur01012018",
