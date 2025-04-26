@@ -139,7 +139,7 @@ const ResumeButton = styled.a`
   width: 95%;
   max-width: 300px;
   text-align: center;
-  padding: 16px 0;
+  padding: 16px ;
 
   background: hsla(271, 100%, 50%, 1);
   background: linear-gradient(
@@ -256,7 +256,7 @@ const Hero = () => {
             <HeroRightContainer>
               <motion.div {...headContentAnimation}>
                 <Tilt>
-                  <Img src={HeroImg} alt="Rishav Chanda" />
+                  <Img src={HeroImg} alt="Naimur Rahman" />
                 </Tilt>
               </motion.div>
             </HeroRightContainer>
