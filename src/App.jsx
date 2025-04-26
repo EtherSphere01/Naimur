@@ -13,7 +13,7 @@ import Contact from "./components/sections/Contact";
 import Footer from "./components/sections/Footer";
 import ProjectDetails from "./components/Dialog/ProjectDetails";
 import { useEffect, useState, Suspense } from "react";
-import LoadingScreen from "./components/cards/LoadingScreen";
+import LoadingScreen from "./components/LoadingScreen/LoadingScreen";
 
 const Body = styled.div`
   background-color: ${({ theme }) => theme.bg};

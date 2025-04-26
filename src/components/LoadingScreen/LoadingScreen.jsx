@@ -1,14 +1,28 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
+import "./Snowfall.css"; // Add this import for the snowfall effect
 
 const LoadingScreen = () => {
+  useEffect(() => {
+    // Generate snowflakes dynamically
+    const numSnowflakes = 30;
+    const snowflakesContainer = document.querySelector(".snowfall");
+
+    for (let i = 0; i < numSnowflakes; i++) {
+      const snowflake = document.createElement("div");
+      snowflake.classList.add("snowflake");
+      snowflakesContainer.appendChild(snowflake);
+    }
+  }, []);
   return (
     <div
       className="fixed inset-0 z-[9999] flex flex-col items-center justify-center text-white w-screen h-screen overflow-hidden"
       style={{
         backgroundColor: "black", // Set the background color to black
+        position: "relative", // Ensures snowfall is above background
       }}
     >
+      <div className="snowfall"></div> {/* Snowfall container */}
       <div className="relative w-40 h-40 mb-6">
         {/* Nucleus */}
         <div className="absolute inset-0 flex items-center justify-center">
@@ -59,7 +73,6 @@ const LoadingScreen = () => {
           </div>
         </motion.div>
       </div>
-
       {/* Loading text */}
       <motion.div
         className="text-lg tracking-widest font-semibold text-gray-300"
