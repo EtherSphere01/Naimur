@@ -12,7 +12,8 @@ import Projects from "./components/sections/Projects";
 import Contact from "./components/sections/Contact";
 import Footer from "./components/sections/Footer";
 import ProjectDetails from "./components/Dialog/ProjectDetails";
-import { useState } from "react";
+import { useEffect, useState, Suspense } from "react";
+import LoadingScreen from "./components/cards/LoadingScreen";
 
 const Body = styled.div`
   background-color: ${({ theme }) => theme.bg};
@@ -39,38 +40,47 @@ const Wrapper = styled.div`
 
 function App() {
   const [openModal, setOpenModal] = useState({ state: false, project: null });
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 2000);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <ThemeProvider theme={darkTheme}>
-      <BrowserRouter>
-        <Navbar />
+      {loading ? (
+        <LoadingScreen />
+      ) : (
         <Body>
-          <StarCanvas />
-          <AnimatePresence>
-            <div>
-              <Hero />
-              <Wrapper>
-                <Skills />
-                {/* <Experience /> */}
-              </Wrapper>
-              <Projects openModal={openModal} setOpenModal={setOpenModal} />
-              <Wrapper>
-                <Education />
-                <Contact />
-              </Wrapper>
-              <Footer />
-
-              {openModal.state && (
-                <ProjectDetails
-                  openModal={openModal}
-                  setOpenModal={setOpenModal}
-                />
-              )}
-            </div>
-          </AnimatePresence>
+          <BrowserRouter>
+            <Navbar />
+            <StarCanvas />
+            <AnimatePresence>
+              <div>
+                <Hero />
+                <Wrapper>
+                  <Skills />
+                  {/* <Experience /> */}
+                </Wrapper>
+                <Projects openModal={openModal} setOpenModal={setOpenModal} />
+                <Wrapper>
+                  <Education />
+                  <Contact />
+                </Wrapper>
+                <Footer />
+                {openModal.state && (
+                  <ProjectDetails
+                    openModal={openModal}
+                    setOpenModal={setOpenModal}
+                  />
+                )}
+              </div>
+            </AnimatePresence>
+          </BrowserRouter>
         </Body>
-      </BrowserRouter>
+      )}
     </ThemeProvider>
   );
 }
-
 export default App;
