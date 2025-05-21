@@ -4,6 +4,8 @@ import styled, { useTheme } from "styled-components";
 import { Bio } from "../data/constants";
 import { MenuRounded } from "@mui/icons-material";
 
+
+
 const Nav = styled.div`
   background-color: ${({ theme }) => theme.bg};
   height: 80px;
@@ -13,7 +15,7 @@ const Nav = styled.div`
   font-size: 1rem;
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 100;
   color: white;
 `;
 const ColorText = styled.div`
@@ -148,7 +150,7 @@ const Navbar = () => {
           <MenuRounded style={{ color: "inherit" }} />
         </MobileIcon>
 
-        <NavItems>
+        <NavItems className="sticky top-0 z-100">
           <NavLink href="#About">About</NavLink>
           <NavLink href="#Skills">Skills</NavLink>
           {/* <NavLink href="#Experience">Experience</NavLink> */}
