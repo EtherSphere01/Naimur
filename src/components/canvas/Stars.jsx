@@ -42,7 +42,7 @@ const StyledStarsCanvas = () => {
     <StyledCanvasWrapper>
       <Canvas camera={{ position: [0, 0, 1] }}>
         <Suspense fallback={null}>
-          <Stars />
+          {/* <Stars /> */}
         </Suspense>
         <Preload all />
       </Canvas>
