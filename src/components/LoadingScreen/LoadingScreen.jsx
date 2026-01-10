@@ -1,20 +1,20 @@
 import React, { useEffect, useMemo } from "react";
 import { motion } from "framer-motion";
-// import "./Snowfall.css";
+import "./Snowfall.css";
 
 const LoadingScreen = () => {
     // Generate snowflakes using React instead of DOM manipulation to avoid memory leaks
-    // const snowflakes = useMemo(
-    //     () =>
-    //         Array.from(
-    //             { length: 15 },
-    //             (
-    //                 _,
-    //                 i // Reduced from 30 to 15
-    //             ) => <div key={i} className="snowflake" />
-    //         ),
-    //     []
-    // );
+    const snowflakes = useMemo(
+        () =>
+            Array.from(
+                { length: 15 },
+                (
+                    _,
+                    i // Reduced from 30 to 15
+                ) => <div key={i} className="snowflake" />
+            ),
+        []
+    );
 
     return (
         <div
@@ -24,7 +24,7 @@ const LoadingScreen = () => {
                 position: "relative",
             }}
         >
-            {/* <div className="snowfall">{snowflakes}</div> */}
+            <div className="snowfall">{snowflakes}</div>
             <div className="relative w-40 h-40 mb-6">
                 {/* Nucleus */}
                 <div className="absolute inset-0 flex items-center justify-center">
