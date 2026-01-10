@@ -9,11 +9,13 @@ import { AnimatePresence } from "framer-motion";
 import Education from "./components/sections/Education";
 import Experience from "./components/sections/Experience";
 import Projects from "./components/sections/Projects";
-import Contact from "./components/sections/Contact";
 import Footer from "./components/sections/Footer";
 import ProjectDetails from "./components/Dialog/ProjectDetails";
-import { useEffect, useState, Suspense } from "react";
+import { useEffect, useState, Suspense, lazy, useCallback } from "react";
 import LoadingScreen from "./components/LoadingScreen/LoadingScreen";
+
+// Lazy load the Contact component since it contains the heavy Earth 3D model
+const Contact = lazy(() => import("./components/sections/Contact"));
 
 const Body = styled.div`
     background-color: ${({ theme }) => theme.bg};
@@ -38,6 +40,20 @@ const Wrapper = styled.div`
     clip-path: polygon(0 0, 100% 0, 100% 100%, 30% 98%, 0 100%);
 `;
 
+// Loading fallback component for lazy-loaded sections
+const SectionLoader = () => (
+    <div
+        style={{
+            minHeight: "400px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+        }}
+    >
+        <div style={{ color: "#fff", fontSize: "1rem" }}>Loading...</div>
+    </div>
+);
+
 function App() {
     const [openModal, setOpenModal] = useState({ state: false, project: null });
     const [loading, setLoading] = useState(true);
@@ -45,6 +61,11 @@ function App() {
     useEffect(() => {
         const timer = setTimeout(() => setLoading(false), 2000);
         return () => clearTimeout(timer);
+    }, []);
+
+    // Memoize modal handlers to prevent unnecessary re-renders
+    const handleSetOpenModal = useCallback((value) => {
+        setOpenModal(value);
     }, []);
 
     return (
@@ -65,17 +86,19 @@ function App() {
                                 </Wrapper>
                                 <Projects
                                     openModal={openModal}
-                                    setOpenModal={setOpenModal}
+                                    setOpenModal={handleSetOpenModal}
                                 />
                                 <Wrapper>
                                     <Education />
-                                    <Contact />
+                                    <Suspense fallback={<SectionLoader />}>
+                                        <Contact />
+                                    </Suspense>
                                 </Wrapper>
                                 <Footer />
                                 {openModal.state && (
                                     <ProjectDetails
                                         openModal={openModal}
-                                        setOpenModal={setOpenModal}
+                                        setOpenModal={handleSetOpenModal}
                                     />
                                 )}
                             </div>
