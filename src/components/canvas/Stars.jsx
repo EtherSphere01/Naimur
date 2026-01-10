@@ -69,9 +69,7 @@ const StyledStarsCanvas = () => {
                 }}
                 frameloop="demand" // Only render when needed
             >
-                <Suspense fallback={null}>
-                    <Stars />
-                </Suspense>
+                <Suspense fallback={null}>{/* <Stars /> */}</Suspense>
                 <Preload all />
             </Canvas>
         </StyledCanvasWrapper>
