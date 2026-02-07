@@ -179,7 +179,7 @@ export const experiences = [
         img: "./deepchain_labs_logo.jpg",
         role: "Frontend Developer",
         company: "Deepchain Labs",
-        date: "June 2025 - Dec 2025",
+        date: "June 2025 - Jan 2026",
         desc: "Delivered front-end features for AI workflow dashboards, building reusable React component patterns with Tailwind and improving Lighthouse performance. Collaborated with backend teams to ship GraphQL/REST integrations and ensured releases with visual regression checks.",
         skills: [
             "React",
@@ -225,6 +225,47 @@ export const education = [
 ];
 
 export const projects = [
+    {
+        id: 13,
+        title: "Krowndex (Krown DEX)",
+        date: "2025",
+        description:
+            "Krown DEX is a modern DeFi web app for swapping and cross-chain bridging with smart routing. It highlights best-price execution, real-time route/price-impact previews, portfolio & activity tracking, liquidity insights, and advanced controls like slippage and MEV protection — built for fast, low-fee trading on the Krown ecosystem.",
+        image: "./krowndex/Landing.png",
+        tags: [
+            "Next.js",
+            "React",
+            "Tailwind CSS",
+            "shadcn/ui",
+            "DeFi",
+            "DEX",
+            "Cross-chain Bridge",
+            "Analytics",
+        ],
+        category: "web app",
+        webapp: "https://krowndex.com/",
+    },
+    {
+        id: 12,
+        title: "Nexus Health",
+        date: "2025",
+        description:
+            "A modern HealthCare Management System frontend with public doctors discovery, doctor details, and a guided consultation/appointment booking flow. Includes AI symptom triage, role-based dashboards (ADMIN/DOCTOR/PATIENT), secure route guarding, notifications UI, and video consultation support via Jitsi meeting IDs generated per appointment.",
+        image: "./Nexus_Health.png",
+        tags: [
+            "Next.js (App Router)",
+            "React",
+            "TypeScript",
+            "Tailwind CSS",
+            "shadcn/ui",
+            "Radix UI",
+            "JWT Auth",
+            "REST API",
+        ],
+        category: "web app",
+        github: "https://github.com/EtherSphere01/Health-Care-Client",
+        webapp: "https://health-care-client-rust.vercel.app/",
+    },
     {
         id: 11,
         title: "Lawyer Booking System",
