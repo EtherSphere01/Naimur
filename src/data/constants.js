@@ -1,8 +1,12 @@
 export const Bio = {
     name: "Md. Naimur Rahman",
-    roles: ["Competitive Programmer", "Web Developer", "Full Stack Developer"],
+    roles: [
+        "Competitive Programmer",
+        "ICPC Regionalist",
+        "Full Stack Developer",
+    ],
     description:
-        "I am a motivated and versatile individual, always eager to take on new challenges. With a passion for learning I am dedicated to delivering high-quality results. With a positive attitude and a growth mindset, I am ready to make a meaningful contribution and achieve great things.",
+        "Full Stack Developer with a strong frontend focus, building production-grade web applications with Next.js/React and TypeScript. Experienced in performance optimization (SSR, Core Web Vitals), secure authentication and RBAC with JWT, and integrating scalable REST APIs across domains like healthcare and DeFi. ICPC regionalist and competitive programmer with strong problem-solving fundamentals.",
     github: "https://github.com/ethersphere01",
     resume: "https://drive.google.com/file/d/1OeYjZ4t_Tk7Y75Qt1m5as0sS-iiaEdao/view?usp=sharing",
     linkedin: "https://www.linkedin.com/in/naimurrahman23/",
