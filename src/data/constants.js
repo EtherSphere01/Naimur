@@ -181,7 +181,7 @@ export const experiences = [
     {
         id: 0,
         img: "./deepchain_labs_logo.jpg",
-        role: "Frontend Developer",
+        role: "Jr. Full Stack Developer",
         company: "Deepchain Labs",
         date: "June 2025 - Jan 2026",
         desc: "Delivered front-end features for AI workflow dashboards, building reusable React component patterns with Tailwind and improving Lighthouse performance. Collaborated with backend teams to ship GraphQL/REST integrations and ensured releases with visual regression checks.",
@@ -194,6 +194,8 @@ export const experiences = [
             "REST APIs",
             "Vercel",
             "Nest.js",
+            "MongoDB",
+            "PostgreSQL",
         ],
     },
 ];
